@@ -55,4 +55,4 @@ Future versions may include:
 
 ## License
 
-To be decided.
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
