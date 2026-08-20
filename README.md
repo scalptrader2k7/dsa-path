@@ -46,6 +46,27 @@ Future versions may include:
 - **Left in Between:** Work intentionally paused, blocked, or deferred for later
 - **Done:** Completed and reviewed work
 
+## Frontend
+
+The frontend is a Next.js application located in the `frontend/` directory.
+
+### Setup
+
+```bash
+cd frontend
+npm install
+npm run dev
+```
+
+Then open [http://localhost:3000](http://localhost:3000) in your browser.
+
+### Build and Lint
+
+```bash
+npm run build
+npm run lint
+```
+
 ## Tools
 
 - OpenCode
