@@ -1,36 +1,68 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DSA Path Frontend
 
-## Getting Started
+Dark-mode-only Next.js frontend for **DSA Path**, a structured DSA learning and external-practice tracking product. This repository contains the visual and demo-data foundation built under Jira issue KAN-9.
 
-First, run the development server:
+## KAN-9 scope
+
+KAN-9 delivers an original visual/demo-data foundation with no real backend or persistent state:
+
+- **Landing page** -- product hero, feature highlights, topic preview, and dashboard metric previews.
+- **Demo dashboard** -- completion summary, difficulty breakdown, activity chart, continue-learning prompt, heatmap preview, topic progress bars, and achievement cards.
+- **Topics catalogue** -- grid of all topic cards with progress indicators.
+- **Topic detail routes** -- data-driven learning roadmaps and problem lists for each topic.
+- **Problem directory** -- client-side local search, topic/difficulty/status filters, live result count, reset, and a no-results state.
+- **Login and Register previews** -- visual-only forms with disabled controls and explicit "coming soon" notices; no authentication is performed.
+- **Shared foundation** -- responsive navigation, footer, dark UI system, accessibility-oriented components, and local typed demo data.
+
+## Local setup
+
+### Prerequisites
+
+- Node.js 20 or later
+- npm
+
+### Install and run
+
+From the `frontend/` directory:
 
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm run lint
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+The development server normally starts at `http://localhost:3000`. A custom port can be passed if needed, for example `npm run dev -- -p 3001`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Routes
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| Path | Description |
+|---|---|
+| `/` | Product landing page |
+| `/dashboard` | Demo practice overview |
+| `/topics` | Topic catalogue |
+| `/topics/[slug]` | Topic learning roadmap and problem list |
+| `/problems` | Searchable and filterable demo problem directory |
+| `/login` | Visual-only sign-in preview |
+| `/register` | Visual-only account-creation preview |
 
-## Learn More
+## Demo-only limitations
 
-To learn more about Next.js, take a look at the following resources:
+All behaviour in KAN-9 is illustrative and local:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Progress, activity, streaks, achievements, notes, bookmarks, and account screens use local demo data only. No data is stored or transmitted.
+- Login and registration do not authenticate users or create accounts. They are static visual previews with disabled controls.
+- Problem directory filters operate entirely in browser memory and reset on page refresh.
+- Practice links open external websites. Completion or progress on those sites is not synchronized back to DSA Path.
+- No Supabase project, database, environment variables, credentials, API keys, or third-party platform integration is included in KAN-9.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Next step
 
-## Deploy on Vercel
+KAN-10 will introduce Supabase Auth and PostgreSQL. It will add real secure registration, login, logout, protected routes, and per-user profile persistence. Real problem progress, notes, bookmarks, activity, and external-platform integration are future follow-on work and are not present in KAN-9.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Technical notes
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- Built with the **Next.js App Router** and **TypeScript**.
+- Local typed demo data lives in `src/data/`.
+- Reusable UI and layout components live in `src/components/`.
+- No additional dependencies beyond those already declared in `package.json` are required to run the frontend.

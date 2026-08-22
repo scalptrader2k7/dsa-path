@@ -1,23 +1,33 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #032147;
-  --accent-yellow: #ecad0a;
+  --background: #0b0f1a;
+  --background-elevated: #111827;
+  --surface: #151c2c;
+  --surface-hover: #1c2540;
+  --foreground: #e8eaf0;
+  --heading-navy: #e8eaf0;
+  --supporting-gray: #8892a8;
+  --border: #1e293b;
+  --accent-purple: #7c5cbf;
   --primary-blue: #209dd7;
-  --secondary-purple: #753991;
-  --heading-navy: #032147;
-  --supporting-gray: #888888;
+  --secondary-purple: #7c5cbf;
+  --accent-yellow: #ecad0a;
 }
 
 @theme inline {
   --color-background: var(--background);
+  --color-background-elevated: var(--background-elevated);
+  --color-surface: var(--surface);
+  --color-surface-hover: var(--surface-hover);
   --color-foreground: var(--foreground);
-  --color-accent-yellow: var(--accent-yellow);
-  --color-primary-blue: var(--primary-blue);
-  --color-secondary-purple: var(--secondary-purple);
   --color-heading-navy: var(--heading-navy);
   --color-supporting-gray: var(--supporting-gray);
+  --color-border: var(--border);
+  --color-accent-purple: var(--accent-purple);
+  --color-primary-blue: var(--primary-blue);
+  --color-secondary-purple: var(--secondary-purple);
+  --color-accent-yellow: var(--accent-yellow);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -25,5 +35,5 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
 }
